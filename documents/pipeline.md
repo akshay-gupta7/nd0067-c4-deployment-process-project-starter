@@ -1,0 +1,5 @@
+Build: This phase of the pipeline pulls the environmint variables into the application and then installs node 16.17.0. The front end and back end dependencies are installed. The front end is then linted. Finally, the front end and api are built through the build scripts in their respective package.json files.
+
+Hold: This phase will be moved when I approve it from my CircleCI account.
+
+Deploy: Similar to build, this phase first prepares the environment variables and installs node 16.17.0. Then the AWS CLIs and Elastic BeanStalk are installed and set up as they are used in later scripts. AWS does not work without an AWS Access Key ID, created through IAM and set through environment variables, so the next step is to configure this access key ID. Once deployment is successful, the front and backend are hosted successfully.
